@@ -1,0 +1,25 @@
+<div class="header">
+    <img src="/assets/img/DataNimbus_Logo_Blue.svg">
+</div>
+<br>
+<div>It works</div>
+<h1>File Processor Utility</h1>
+<!-- <p>Upload file</p>
+<input type="file" accept=".csv,.xls,.xlsx">
+<br>
+<br>
+<button onclick="">Upload</button> -->
+<ngx-dropzone (change)="onSelect($event)" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,text/csv,xls,xlsx,csv">
+  <ngx-dropzone-label>Drop files here or click to upload.</ngx-dropzone-label>
+     <ngx-dropzone-preview *ngFor="let f of files"(success)="onUploadSuccess($event)"  (error)="onUploadError($event)">
+<ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+</ngx-dropzone-preview>
+</ngx-dropzone>
+<button (click)="uploadFileToStorage()">Upload</button>
+<!-- <ngx-dropzone (change)="onSelect($event)">
+	<ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+	<ngx-dropzone-preview *ngFor="let f of files">
+		<ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+	</ngx-dropzone-preview>
+</ngx-dropzone> -->
+  
