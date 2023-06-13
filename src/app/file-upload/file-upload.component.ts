@@ -84,7 +84,7 @@ export class FileUploadComponent {
       return;
     }
     const options = { withCredentials: true };
-    const endpoint = 'http://localhost:8000/upload';
+    const endpoint = '/upload';
     const formData: FormData = new FormData();
     formData.append('file', this.fileToUpload, this.fileToUpload.name);
     this.http.post(endpoint, formData, options).subscribe(
